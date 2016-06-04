@@ -1,8 +1,5 @@
 import flask
 from flask import Flask, render_template
-import json
-import requests
-import xmpp
 
 app = Flask(__name__)
 
