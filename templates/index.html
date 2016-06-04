@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <script src="http://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDsKhxOLSymOp2655wpLL6_zRXONzA2zTw"
+            , authDomain: "levels-4f72b.firebaseapp.com"
+            , databaseURL: "https://levels-4f72b.firebaseio.com"
+            , storageBucket: "levels-4f72b.appspot.com"
+        , };
+        firebase.initializeApp(config);
+    </script>
+
+<script>
+    if ('serviceWorker' in navigator) {
+    console.log('Service Worker is supported');
+    navigator.serviceWorker.register('sw.js').then(function(reg) {
+        console.log(':^)', reg);
+        reg.pushManager.subscribe({
+            userVisibleOnly: true
+        }).then(function(sub) {
+            console.log('endpoint:', sub.endpoint);
+        });
+    }).catch(function(error) {
+        console.log(':^(', error);
+    });
+}
+</script>
+</body>
+
+</html>
